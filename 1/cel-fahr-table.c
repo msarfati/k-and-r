@@ -15,8 +15,7 @@ int main() {
 
     printf("Celcius\tFahrenheit\n");
     while (cel <= upper) {
-        fahr = 5 / (cel + 32) * 9;
-        // cel = 5 * (fahr-32) / 9;
+        fahr = cel * (9/5) + 32;
         printf("%.0f\t%.2f\n", cel, fahr);
         cel += step;
     }
