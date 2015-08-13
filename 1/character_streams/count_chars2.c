@@ -15,8 +15,17 @@ void new_typer() {
     printf("Total characters: %d\n", c_count);
 }
 
+void line_count() {
+    int line_count;
+    for(int c; ( c = getchar()) != EOF;){
+        line_count += c == *"\n" ? 1 : 0;
+    }
+    printf("Total characters: %d\n", line_count);
+}
+
 int main(){
     // count_chars();
-    new_typer();
+    // new_typer();
+    line_count();
     return 0;
 }
