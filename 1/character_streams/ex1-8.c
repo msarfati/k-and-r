@@ -4,7 +4,7 @@ int count_character(char character, char compare) {
     return character == compare ? 1 : 0;
 }
 
-void line_counting() {
+void element_count() {
     int c;
 
     int tab_c = 0;
@@ -23,6 +23,6 @@ void line_counting() {
 }
 
 int main() {
-    line_counting();
+    element_count();
     return 0;
 }
