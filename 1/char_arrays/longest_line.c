@@ -3,32 +3,31 @@
 
 /* Forward Declarations */
 
-int getline(char line[], int maxline);
+int my_getline(char line[], int maxline);
 void copy(char to[], char from[]);
 
-/* Print longest input line */
-
 int main() {
+    /* Print longest input line */
     int len; // Current line length
     int max; // Max line length so far
     char line[MAXLINE]; // current input line
     char longest[MAXLINE]; // Longest line so far
 
     max = 0;
-    while ((len = getline(line, MAXLINE)) > 0)
+    while ((len = my_getline(line, MAXLINE)) > 0)
         if (len > max) {
             max = len;
             copy(longest, line);
         }
     if (max > 0)
-        printf("%s", longest);
+        printf("\nLongest line was:\n%s", longest);
     return 0;
 }
 
-int getline(char s[], int lim) {
-    int c;
+int my_getline(char s[], int lim) {
+    int c, i;
 
-    for (int i = 0; i < lim-1 && (c=getchar()) != EOF && c != '\n'; ++i)
+    for (i = 0; i < lim-1 && (c=getchar()) != EOF && c != '\n'; ++i)
         s[i] = c;
     if (c == '\n') {
         s[i] = c;
