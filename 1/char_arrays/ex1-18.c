@@ -4,6 +4,7 @@
 /* Forward Declarations */
 
 int my_getline(char line[], int maxline);
+char clean_line(char original[], int len);
 
 int main() {
     /* Print longest input line */
@@ -12,10 +13,18 @@ int main() {
 
     while ((len = my_getline(line, MAXLINE)) > 0)
         if (len > 80) {
-            // copy(longest, line);
-            printf("\n%s", line);
+            printf("\n%s", clean_line(line, len));
         }
     return 0;
+}
+
+char clean_line(char original[], int len) {
+    char cleaned[len];
+    int i = 0;
+
+    while ((cleaned[i] = original[i]) != ('\t' || ' ' || '\0'))
+        ++i;
+    return cleaned;
 }
 
 int my_getline(char s[], int lim) {
